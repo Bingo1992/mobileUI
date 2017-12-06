@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>表单</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+
+</head>
+<body>
+    <form action="#">
+        <ul class="form-list border-list">
+          
+            <li class="car-list1">
+                <label>车型</label>
+                <input type="text" readonly="readonly" placeholder="请选择车型">
+                <i class="icon-right"></i>
+            </li>
+          
+        </ul>
+      
+        <div class="btn">
+            <a id="btn-login" class="btn-theme">登录</a>
+        </div>
+    </form>
+
+
+      <!-- 遮罩层 -->
+    <div class="car-dialog" id="dialog-1"></div>
+    <!-- 品牌列表 -->
+    <div class="car-list2 car-list">
+        <a class="goback border-bottom" href="#"><i class="icon-left"></i></a>
+        <!-- 字母顺序     -->
+       <!--  <div class="list-order">
+            <p class="letter">A</p>
+            <ul class="border-list">
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+
+    <div class="car-list3 car-list">
+        <a class="goback border-bottom" href="#"><i class="icon-left"></i></a>
+        <ul>
+            <!-- <li>
+                <div class="brand-info border-bottom">
+                    <a class="fl">奥迪A3</a>
+                    <div class="fr"><i class="icon-down"></i></div>
+                </div>
+                <div class="brand-detail">
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+
+ 
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-login').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $.isTip('请输入正确的手机号码');
+            }
+        });
+  
+        // 获取短信验证码
+        $('.btn-getCode').click(function() {
+           $(this).addClass('disbtn').html('剩余60s');
+        });
+
+        var brand = new SelectBrand();//选择车型
+        // 获取车型
+        $.ajax({
+            type:'GET',
+            url:'json/carBrand.json',
+            dataType:'json',
+            success: function(res){
+               var arr = [], html1 = '';
+               var common = res.data.common;
+               for(var i in common){ arr.push(common[i]); }
+               var len1 = arr.length;
+               for(var i=0; i<len1; i++){
+                   var len2 = arr[i].list.length;
+                   var html2 = '';
+                   for(var j=0; j<len2; j++){
+                      html2 += '<li data-id='+arr[i].list[j].id+'>\
+                                <a class="list-box">\
+                                    <img class="logo-img" src='+arr[i].list[j].image_src+'>\
+                                    <p class="list-info">'+arr[i].list[j].name+'</p>\
+                                    <i class="icon-right"></i>\
+                                </a>\
+                            </li>';
+                   }
+                   html1 = '<div class="list-order">\
+                                <p class="letter">'+arr[i].alpha+'</p>\
+                                <ul class="border-list">'+html2+'</ul>\
+                            </div>';
+                    $('.car-list2').append(html1);
+               }
+               
+               $('.car-list2').delegate('li', 'click', function(event) {
+                  $('.car-list3 ul').empty();
+                   var dataId = $(this).attr('data-id');
+                   var arr2 = [];
+                   for(var i in arr) { arr2.push(arr[i].list); }
+                   arr2 = [].concat.apply([],arr2);//将二维数组转换为一维数组
+                   $.each(arr2,function(i,list1){
+                        if(list1.id == dataId){
+                            html1 = '';
+                            $.each(list1.series_list,function(j,series_list){
+                                html2 = '';
+                                $.each(series_list.list,function(k,list2){
+                                    html2 += '<a>'+list2.title+'</a>';
+                                });
+                                html1 += '<li>\
+                                            <div class="brand-info border-bottom">\
+                                                <a class="fl">'+series_list.name+'</a>\
+                                                <div class="fr"><i class="icon-down"></i></div>\
+                                            </div>\
+                                            <div class="brand-detail">'+html2+'</div>\
+                                        </li>';
+                            }); //循环结束
+
+                            $('.car-list3 ul').append(html1);
+                        }
+                   });
+               });
+            }
+        });
+   });
+   </script>
+</body>
+</html>

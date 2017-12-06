@@ -1,0 +1,200 @@
+@charset "utf-8";
+// -----theme color----
+$color-theme: #f63;
+$color-gray: #898989;
+$border-color: #e1e1e1;
+
+$color-red: #f74c31;
+
+$lg-font: 16px;
+$md-font: 12px;
+$sm-font: 10px;
+// ----margin----
+$gauge: 10px;
+$bgMargin: 16px;
+
+.center-text {text-align: center;}
+.horizational-text {text-align: right;}
+
+.banner{margin-bottom: 70px;}
+.banner-2 {margin-bottom: 180px;}
+.banner-3 {margin-top: 60px;margin-bottom:70px; }
+
+// button
+.btn {
+    margin: $bgMargin;
+}
+.btn-theme,.btn-cancel,.btn-default {
+    @include btnRadius;
+    color: #fff;
+    padding: 0 10px;
+}
+.btn-theme {
+    background-color: $color-theme;
+}
+.btn-cancel {
+    background-color: #ddd;
+}
+.btn-default {
+    background-color: #F8F8F8;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.btn-border {
+    @include btnBorder(44px);
+}
+
+
+// 未读个数
+.circlePoint {
+    position: absolute;
+    top: 4px;
+    right: 10%;
+    @include circle(18px);
+    min-width: 18px;
+    padding: 0 4px;
+    display: block;
+    color: #fff;
+    background-color: $color-red;
+    font-size: 10px;
+}
+
+
+// ----checkbox allcheck---
+.checkbox,.all-check {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;    
+    input{
+        @include circle; 
+        background-color: $border-color;
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        margin-right: 4px;
+        &:checked{
+            background-color: transparent;
+        }
+    }
+    i{
+        @include circle; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        opacity: 0;
+        font-size: 20px;
+    }
+}
+.checkbox input:checked + i,
+.all-check input:checked + i {
+    background-color: $color-theme;   
+    opacity: 1;
+}
+
+/*slide checkbox*/
+.slide-btn{
+  @include height(30px);
+  input{
+    width: 50px;
+    @include height(30px);
+    margin: 0;
+    &:before{
+        content: "";
+        position:  absolute;
+        padding-left: 20px;
+        width: 50px;
+        @include semicircle(30px);
+        background-color: #ccc;
+        color: #fff;
+        -webkit-transition: background-color .4s linear;
+        box-sizing: border-box;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        display: inline-block;
+        @include circle(28px);
+        background-color: #fff;
+        box-sizing:border-box;
+        -webkit-transform:translateX(1px);
+        -webkit-transition: -webkit-transform .4s linear;
+        margin-top: 1px;
+    }
+    &:checked:before{
+        content: "";
+        background-color: $color-theme !important;
+        -webkit-transition: background-color .4s cubic-bezier(0.175, .885, .32, 1.1) 0s;
+    }
+    &:checked:after{
+        -webkit-transform:translateX(21px);
+        -webkit-transition: -webkit-transform .4s cubic-bezier(0.175, .885, .32, 1.1) 0s;
+    }
+  }
+}
+
+// padding
+.pdl {padding-left: 10px;}
+.pdr {padding-right: 10px;}
+.pdt {padding-top: 10px;}
+.pdb {padding-bottom: 10px;}
+
+.fl {float: left;}
+.fr{float: right;}
+
+// 溢出隐藏
+.nowrap {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nowrap-2 {
+    line-height: 20px !important;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+//固定定位
+%fixed-layout {
+    position:fixed;
+    left:0;
+    width: 100%;
+    z-index: 3; 
+}
+.fixed-body {
+    @extend %fixed-layout;
+    top: 0;
+    bottom: 0;
+}
+.fixed-bottom {
+    @extend %fixed-layout;
+    bottom: 0;
+}
+.fixed-top {
+    @extend %fixed-layout;
+    top: 0;
+    z-index: 5;
+}
+
+// 白色背景
+.border-list {
+    margin: $bgMargin 0;
+    background-color: #fff;
+    width:100%;
+}
+.bg-show {
+    background-color: #fff;
+    margin-bottom: $bgMargin;
+    width:100%;
+    .border-list{margin-top:0;}
+}
+
+// 三角颜色
+i.icon-right,i.icon-up,i.icon-down,i.icon-left{
+    color: #ccc;
+    font-size: 20px;
+}
+

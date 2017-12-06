@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*1px杈规��*/
+.border-top,
+.border-bottom,
+.border-right,
+.border-left,
+.border-list,
+.border-list li,
+.bg-show,
+.ui-border{
+    position: relative;
+}
+%mini-border {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform:scale(.5);
+    transform:scale(.5);
+    box-sizing:border-box;
+}
+.border-top:after {
+    @extend %mini-border;
+    border-top: 1px solid $border-color;
+}
+.border-bottom:after {
+    @extend %mini-border;
+    border-bottom: 1px solid $border-color;
+}
+.border-right:after {
+    @extend %mini-border;
+    border-right: 1px solid $border-color;
+}
+.border-left:after {
+    @extend %mini-border;
+    border-left: 1px solid $border-color;
+}
+
+.bg-show:before,.border-list:before {
+    @extend .border-top:after;
+}
+
+.bg-show:after,.border-list li:after {
+    @extend .border-bottom:after;
+    
+}
+.ui-border:after {
+    @extend %mini-border;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+}

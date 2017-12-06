@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>列表</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- 上下结构列表 -->
+    <article class="border-list">
+        <div class="list-box border-bottom">
+            <h4 class="list-info">上下结构列表</h4>
+            <a href="#" class="font-blue">更多</a>
+        </div>
+        <ul>
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2">邂逅清新淡香水配方</h4>
+                        <p class="nowrap-2">蕴藏在圆形瓶身中的闪亮花香调香水。清新的气息让你沉醉在幸福与幸运的环绕中。</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                        <p>邰小宝</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                        <p>邰小宝</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </article>
+
+    <!-- 左右结构列表 -->
+    <article class="bg-show">
+        <div class="list-box border-bottom">
+            <h4 class="list-info">左右结构列表</h4>
+            <a href="#" class="font-blue">更多</a>
+        </div>
+        <ul class="hProduct-list">
+            <li>
+                <a href="product_detail.html">
+                    <div class="hpro-img">
+                        <img src="images/3.png">
+                    </div>
+                    <div class="gauge-box">
+                        <h4 class="nowrap-2">范思哲VERSACE星夜水晶女士香水 30ml</h4>
+                        <div class="horizational-text">
+                            <span class="fl font-theme">￥<span>309</span></span>
+                            <span class="font-blue">
+                                销量
+                                <span>47283</span>
+                            </span>
+                        </div>     
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="product_detail.html">
+                    <div class="hpro-img">
+                        <img src="images/3.png">
+                    </div>
+                    <div class="gauge-box">
+                        <h4 class="nowrap-2">星夜水晶女士香水 30ml</h4>
+                        <div class="horizational-text">
+                            <span class="fl font-theme">￥<span>309</span></span>
+                            <span class="font-blue">
+                                销量
+                                <span>47283</span>
+                            </span>
+                        </div>     
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </article>
+
+    <!-- 上下结构列表 -->
+    <article class="border-list">
+        <div class="list-box border-bottom">
+            <h4 class="list-info">列表（统一html结构）</h4>
+            <a class="btn-change font-blue">换一种列表</a>
+        </div>
+        <ul class="product-list">
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                        <p>邰小宝</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                        <p>邰小宝</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="product_detail.html">
+                    <div class="list-img">
+                        <img src="images/s1.jpg">
+                    </div>
+                    <div class="list-info">
+                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                        <p>邰小宝</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </article>
+
+   <script type="text/javascript">
+   $(function(){
+    $('.btn-change').click(function(){
+        $('.product-list').toggleClass('large-pro-list');;
+    });
+   });
+   </script>
+        
+</body>
+
+</html>

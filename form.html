@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>表单</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+</head>
+<body>
+    <form action="#">
+        <ul class="form-list border-list">
+            <li>
+                <label>登录账户</label>
+                <input class="mobile" type="tel" placeholder="请输入注册的手机号">
+            </li>
+            <li>
+                <label>登录密码</label>
+                <input type="password" placeholder="请输入登录密码">
+            </li>
+            <li class="car-list1">
+                <label>车型</label>
+                <input type="text" readonly="readonly" placeholder="请选择车型">
+                <i class="icon-right"></i>
+            </li>
+            <li>
+                <label>证件类型</label>
+                <div class="select-box list-info">
+                    <select>
+                        <option>身份证</option>
+                        <option>驾驶证</option>
+                    </select>
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li>
+                <label>注册日期</label>
+                <div class="date list-info">
+                    <input type="date">
+                    <span>请输入时间</span>
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+           
+            <li class="vcode-box">
+                <label>短信验证码</label>
+                <input type="tel" placeholder="填写验证码">
+                <a class="btn-getCode border-left">获取验证码</a>
+            </li>
+            <li>
+                <span class="list-info">开通服务</span>
+                <div class="slide-btn">
+                    <input type="checkbox" checked>
+                </div>
+            </li>
+        </ul>
+        <label class="gauge-box" for="protocol">
+            <div class="checkbox">
+                <input class="list-info" type="checkbox" id="protocol">
+                <i class="icon-hook"></i>
+            </div>
+            <span class="font-gray">本人已阅读并同意<a class="font-blue" href="#">《某某协议》</a></span>
+        </label>
+        <div class="btn">
+            <a id="btn-login" class="btn-theme">登录</a>
+        </div>
+        <div class="btn">
+            <a id="btn-login" class="btn-theme disBtn">登录</a>
+        </div>
+    </form>
+
+
+      <!-- 遮罩层 -->
+    <div class="car-dialog" id="dialog-1"></div>
+    <!-- 品牌列表 -->
+    <div class="car-list2 car-list">
+        <a class="goback border-bottom" href="#"><i class="icon-left"></i></a>
+        <!-- 字母顺序     -->
+        <div class="list-order">
+            <p class="letter">A</p>
+            <ul class="border-list">
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奥迪</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 顺序B -->
+        <div class="list-order">
+            <p class="letter">A</p>
+            <ul class="border-list">
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box">
+                        <img class="logo-img" src="images/logo.jpg">
+                        <p class="list-info">奔驰</p>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 顺序B结束 -->
+    </div>
+
+    <div class="car-list3 car-list">
+        <a class="goback border-bottom" href="#"><i class="icon-left"></i></a>
+        <ul>
+            <li>
+                <div class="brand-info border-bottom">
+                    <a class="fl">奥迪A3</a>
+                    <div class="fr"><i class="icon-down"></i></div>
+                </div>
+                <div class="brand-detail">
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                </div>
+            </li>
+            <li>
+                <div class="brand-info border-bottom">
+                    <a class="fl">奥迪A3</a>
+                    <div class="fr"><i class="icon-down"></i></div>
+                </div>
+                <div class="brand-detail">
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                </div>
+            </li>
+            <li>
+                <div class="brand-info border-bottom">
+                    <a class="fl">奥迪A3</a>
+                    <div class="fr"><i class="icon-down"></i></div>
+                </div>
+                <div class="brand-detail">
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                </div>
+            </li>
+            <li>
+                <div class="brand-info border-bottom">
+                    <a class="fl">奥迪A3</a>
+                    <div class="fr"><i class="icon-down"></i></div>
+                </div>
+                <div class="brand-detail">
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                    <a>2014款Sportback 35TFSI 时尚型</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+ 
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-login').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $.isTip('请输入正确的手机号码');
+            }
+        });
+  
+        // 获取短信验证码
+        $('.btn-getCode').click(function() {
+           $(this).addClass('disbtn').html('剩余60s');
+        });
+
+        var brand = new SelectBrand();//选择车型
+   });
+   </script>
+</body>
+</html>

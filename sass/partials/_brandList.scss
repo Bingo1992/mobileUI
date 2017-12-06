@@ -1,0 +1,75 @@
+// 选择车型
+.logo-img {
+    width: auto;
+    height: 50px;
+    margin-right: 10px;
+}
+.car-dialog{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 7;
+    background-color: rgba(0,0,0,.6);
+}
+
+.car-list{
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+    -webkit-transform-origin: 0 0 0;
+    -webkit-transform: translateX(150%) translateZ(0); 
+    -webkit-transition: all .4s linear 0s;
+    right: 0;
+    width: 14.5rem;
+    li {position: relative;}
+    .border-list {margin: 0;}
+}
+.car-list2{z-index: 20;}
+.car-list3{z-index: 30;}
+
+.goback{
+    display: block;
+    line-height: 1.6rem;
+    color: #999;
+    padding-left: .5rem;
+    position: relative;
+
+}
+
+.letter{
+    line-height: 1.2rem;
+    padding-left: .5rem;
+    background-color: #eee;
+}
+
+// .ui-brand i{
+//     position: absolute;
+//     right: .5rem;
+//     top: .5rem;
+// }
+.brand-info {
+    padding: 0 .5rem;
+    line-height: 2rem;
+    overflow: hidden;
+}
+.brand-detail{
+    display: none;
+}
+.brand-detail>a{
+    position: relative;
+    display: block;
+    color: #999;
+    padding-left: .45rem;
+    line-height: 2rem;
+    &:after{
+        @extend .border-bottom;
+    }
+}

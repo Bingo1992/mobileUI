@@ -1,0 +1,36 @@
+@charset "utf-8";
+//头部选项卡切换
+.nav-tabs {
+	background-color: #fff;
+	a {
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+	.active {
+		a {
+			color: $color-theme;
+			border-bottom: 3px solid $color-theme;
+		}
+	}
+
+}
+.tabs-container {
+	display: none;
+}
+
+// 头部筛选
+.sort-tabs {
+	padding: 10px 0;
+	height: 44px;
+}
+
+// 底部导航
+.nav-bar {
+	.active {
+		color: $color-theme;
+	}
+	a {
+		color: $color-gray;
+	}
+	i{font-size: 28px;}	
+}

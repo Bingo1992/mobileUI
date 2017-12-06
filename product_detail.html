@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+         <!--banner轮播-->
+        <div class="slide" id="slide">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="dot">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!--banner end-->
+        <div class="gauge-box bg-show">
+            <h4>范思哲VERSACE星夜水晶女士香水 30ml</h4>
+            <p class="font-gray">范思哲VERSACE星夜水晶女士香水</p>
+            <div class="horizational-text">
+                <h3 class="fl font-theme">￥<span>309</span></h3>
+                <span class="font-blue">
+                    销量
+                    <span>47283</span>
+                </span>
+            </div>     
+        </div>
+
+        <div class="bg-show">
+            <div class="list-box border-bottom">
+                <h4 class="list-info">商品详情</h4>
+            </div>
+            <div class="gauge-box">
+                <p class="font-gray text">
+                    太空棉枕芯，柔软舒适，承托力强。太空棉枕芯，柔软舒适，承托力强。太空棉枕芯，柔软舒适，承托力强。太空棉枕芯，柔软舒适，承托力强。太空棉枕芯，柔软舒适，承托力强。
+                </p>
+                <img src="images/banner.jpg">
+            </div>
+        </div>
+            
+    </div>
+       
+
+    <script type="text/javascript">
+    $(function(){
+      //banner图片只有一张时，隐藏圆点
+        window.onload = function() {
+                var len = $('.slide li').length;
+                if (len <= 1) {
+                    $('.dot').addClass('hide');
+                }  
+            }
+        //banner 图片轮播效果
+        $('.slide').swipeSlide({
+            continuousScroll: true,
+            speed: 3000,
+            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            callback: function(i) {
+                $('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                var dotWidth = $('.dot').width();
+                $('.dot').css('margin-left','-'+dotWidth/2+'px');
+            }
+        });
+
+        
+    });
+    </script>
+</body>
+
+</html>

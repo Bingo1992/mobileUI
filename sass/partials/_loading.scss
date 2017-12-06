@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// 加载中图标
+.loading-img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-animation: loading 1s steps(12, end) infinite;
+    animation: loading 1s steps(12, end) infinite;
+    background: transparent url(../images/loading.svg) no-repeat;
+    background-size: 100%;
+}
+.getmore {
+    font-size: $md-font;
+    text-align: center;
+    color: $color-gray;
+    padding-bottom: $bgMargin;
+    .loading-img {
+		display: none;
+	}
+}
+
+.loading {
+	.loading-img {
+		display: inline-block;
+	}
+}
+
+@-webkit-keyframes loading {
+	0% {
+		-webkit-transform: rotate3d(0, 0, 1, 0deg);
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	100% {
+		-webkit-transform: rotate3d(0, 0, 1, 360deg);
+    	transform: rotate3d(0, 0, 1, 360deg);
+	}
+}
+.tip-content {
+	.loading-img {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+// 加载中遮罩
+.loading-dialog {
+	.tip-content {
+		width: 150px;
+	}
+}

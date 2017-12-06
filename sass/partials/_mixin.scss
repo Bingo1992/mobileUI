@@ -1,0 +1,37 @@
+@charset "utf-8";
+@mixin box {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+@mixin height($bs:44px){
+    height:$bs;
+    line-height:$bs;
+}
+@mixin semicircle($bs:30px){
+    @include height($bs);
+    border-radius: $bs / 2;
+    text-align:center;
+} 
+@mixin circle($bs:24px){
+    width: $bs;
+    @include height($bs);
+    border-radius: $bs;
+    text-align:center;
+}
+@mixin btnRadius($bs:44px){
+    @include height($bs);
+    border-radius: 4px;
+    text-align:center;
+    display: block;
+    
+}
+@mixin btnBorder($bs:44px,$borderColor:$color-gray){
+    @include btnRadius($bs);
+    border: 1px solid $borderColor;
+    color: $borderColor;
+    padding: 0 10px;
+    box-sizing: border-box;
+}

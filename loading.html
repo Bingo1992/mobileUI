@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>加载中</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    
+    <div class="btn">
+        <div class="btn-default">点击加载</div>
+    </div>
+
+    <p class="getmore">
+        <span>点击加载更多</span>
+        <i class="loading-img"></i>
+    </p>
+
+    <!-- 加载中遮罩 -->
+    <div class="loading-dialog">
+        <div class="tip-content">
+            <i class="loading-img"></i>
+            <p>正在加载...</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        $('.getmore').click(function(){
+            $(this).addClass('loading').find('span').html('正在加载...');
+            setTimeout(function(){
+                $(this).removeClass('loading').find('span').html('点击加载更多');
+            },1500);
+        });
+
+        $('.btn-default').click(function(){
+            $('.tip-dialog').addClass('show');
+            setTimeout(function(){
+                $('.tip-dialog').removeClass('show');
+            },1500);
+        });
+    })
+    </script>
+</body>
+
+</html>

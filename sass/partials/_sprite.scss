@@ -1,0 +1,9 @@
+@charset "utf-8";
+$icons-sprite-dimensions: true;//测量精灵类图片并为其赋宽高
+@import "compass/utilities/sprites"; // 加载compass sprites模块
+@import "icons/*.png";   // 导入icons目录下所有png图片
+@include all-icons-sprites; // 输出所有的雪碧图css
+
+.icon-heart {
+    @include icons-sprite(heart);
+}

@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "compass";
+@import "partials/default";
+@import "partials/mixin";
+@import "partials/base";
+@import "partials/color";
+@import "partials/layout";
+@import "partials/border";
+
+@import "partials/nav";//导航，选项卡
+@import "partials/dialog";//遮罩
+@import "partials/search";//搜索
+@import "partials/form";//表单
+@import "partials/loading";//加载中
+
+@import "partials/table";//表格
+@import "partials/list";//商品列表
+@import "partials/cart";//购物车
+@import "partials/comment";//评价
+@import "partials/sprite";//雪碧图
+@import "partials/brandList";//车型
+/*放最后*/
+.show {display: block;}
+.hide {display: none;}
+.disBtn{pointer-events: none;background-color: #ccc;}
+.more-wp-open {
+    -webkit-transform: translateX(0) translateZ(0) !important;
+    -webkit-transition: all .6s;
+}
+.more-top-open {
+    -webkit-transform: translateY(0) translateZ(0) !important;
+    -webkit-transition: all .6s !important;
+}

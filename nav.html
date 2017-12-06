@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>导航栏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <header class="fixed-top">
+        <ul class="nav-tabs flex-layout border-bottom">
+            <li class="active">
+                <a>全部</a>
+            </li>
+            <li>
+                <a>待支付</a>
+            </li>
+            <li>
+                <a>待收货</a>
+            </li>
+            <li>
+                <a>待评价</a>
+            </li>
+        </ul>
+        <ul class="sort-tabs flex-layout bg-show">
+            <li class="border-right">
+                <span>排序</span>
+                <i class="icon-down"></i>
+            </li>
+            <li>
+                <span>筛选</span>
+                <i class="icon-down"></i>
+            </li>
+        </ul>
+    </header>
+
+    <div style="margin-top:90px">
+        <div class="tabs-container show">
+            <p>111111</p>
+        </div>
+        <div class="tabs-container">
+            <p>22222</p>
+        </div>
+        <div class="tabs-container">
+            <p>33333</p>
+        </div>
+        <div class="tabs-container">
+            <p>444444</p>
+        </div>
+    
+    </div>
+
+
+    <footer class="fixed-bottom">
+        <!-- 底部导航 -->
+        <ul class="nav-bar flex-layout border-top">
+            <li>
+                <a class="active" href="index.html">
+                    <i class="icon-home"></i>
+                    <p>商城首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-cart"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="order_list.html">
+                    <i class="icon-order"></i>
+                    <p>我的订单</p>
+                </a>
+                <span class="circlePoint">1</span>
+            </li>  
+            <li>
+                <a href="#">
+                    <i class="icon-user"></i>
+                    <p>个人中心</p>
+                </a> 
+            </li>    
+        </ul>
+    </footer>
+
+      <!-- //排序，筛选 -->
+    <div class="sort-box border-list">
+        <ul>
+            <li class="active">价格从高到低</li>
+            <li>价格从低到高</li>
+        </ul>
+        <div class="ui-dialog show"></div>
+    </div>
+    <div class="sort-box border-list">
+        <ul>
+            <li class="active">未投保车辆</li>
+            <li>已投保车辆</li>
+        </ul>
+        <div class="ui-dialog show"></div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        //选项卡
+        $('.nav-tabs li').click(function(){
+            $(this).switchTabs('.nav-tabs li','.tabs-container');
+        });
+
+        //点击排序。筛选
+        $('.sort-tabs li').click(function(){
+            $(this).switchSortTabs('.sort-tabs li','.sort-box');   
+        });
+    });
+    </script>
+</body>
+
+</html>

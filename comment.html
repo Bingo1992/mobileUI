@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>评价页面</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/jquery.fileUpload.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <ul class="comment-list form-list border-list">
+            <li>
+                <label>商品质量</label>
+                <div class="wrapper list-info">
+                    <i class="icon-star" title="差"></i>
+                    <i class="icon-star" title="一般"></i>
+                    <i class="icon-star" title="好"></i>
+                    <i class="icon-star" title="很好"></i>
+                    <i class="icon-star" title="非常好"></i>
+                    <span class="star-score"></span>
+                    <input type="hidden">
+                </div>
+
+            </li>
+            <li>
+                <label>服务态度</label>
+                <div class="wrapper list-info">
+                    <i class="icon-star" title="差"></i>
+                    <i class="icon-star" title="一般"></i>
+                    <i class="icon-star" title="好"></i>
+                    <i class="icon-star" title="很好"></i>
+                    <i class="icon-star" title="非常好"></i>
+                    <span class="star-score"></span>
+                    <input type="hidden">
+                </div>
+            </li>
+            <li>
+                <label>物流速度</label>
+                <div class="wrapper list-info">
+                    <i class="icon-star" title="差"></i>
+                    <i class="icon-star" title="一般"></i>
+                    <i class="icon-star" title="好"></i>
+                    <i class="icon-star" title="很好"></i>
+                    <i class="icon-star" title="非常好"></i>
+                    <span class="star-score"></span>
+                    <input type="hidden">
+                </div>
+            </li>
+            <li>
+                <label>描述</label>
+                <textarea class="list-info" cols="30" rows="3" placeholder="请说出您对该商品的评价"></textarea>
+            </li>
+        </ul>
+
+        <div class="bg-show gauge-box">
+            <p>上传图片：</p>
+            <div class="upload-pic">
+                <div class="add-pic">
+                    <span>添加图片</span>
+                    <input type="file" accept="image/*" multiple="multiple">
+                </div>
+                <p class="percent"><span class="imgCount">0</span>/5</p>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="btn-theme">提交</div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+    $(function(){
+        //评价页面
+        $('.wrapper i').click(function() {
+            var $wrapper = $(this).parent();
+            var $star = $wrapper.find('i');
+            var $starScore = $wrapper.find('span');
+            var $inputValue = $wrapper.find('input');
+            clearStar($wrapper);
+            var index = $star.index(this);
+            for (var i = 0; i < index + 1; i++) {
+                $star.eq(i).addClass('icon-star-select');
+            }
+            var value = $star.eq(index).attr("title");
+            $starScore.html(value);
+            $inputValue.val(value);
+
+        });
+
+         //清除评价页面的星星颜色
+        function clearStar(wrapper) {
+            var len = wrapper.find('i').length;
+            for (var i = 0; i < len; i++) {
+                wrapper.find('i').eq(i).removeClass('icon-star-select');
+            }
+        };
+
+        //添加的图片不能超过5张
+        var imgLen = 5;//可上传的图片张数
+        $('.upload-pic').delegate('input','change',function(){
+            var len = $('.upload-pic').find('img').length;
+            var $parent = $(this).closest('.add-pic');
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var dataUri = event.target.result;
+                $parent.append('<div class="uploadImg"><img src='+dataUri+'></div>');
+                $('.imgCount').html(++len);
+                if(len < imgLen){
+                    addFileInput();
+                }
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        //删除添加的图片
+        $('.upload-pic').delegate('img','click',function(){
+            var _this = $(this);
+            var len = $('.upload-pic').find('img').length;
+            deleteDialog('确定删除该图片吗？');//删除遮罩（my.js中)
+           // 确定删除
+            $('.confirm').click(function(){
+                _this.closest('.add-pic').remove();
+               
+                if(len==imgLen){ addFileInput(); }
+                $('.imgCount').html(--len);
+
+                $('.ui-dialog').remove();
+            });
+            //取消删除
+            $('.cancel').click(function(){
+                $('.ui-dialog').remove();
+            });
+        });
+        //添加input file框
+        function addFileInput(){
+            var html = '<div class="add-pic">\
+                        <span>添加图片</span>\
+                        <input type="file"  accept="image/*"  multiple="multiple">\
+                    </div>';
+            $('.percent').before(html);
+        }
+
+    });
+    </script>
+</body>
+
+</html>

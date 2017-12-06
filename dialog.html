@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>遮罩</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    <div class="btn">
+         <div id="btn1" class="btn-border">垂直居中遮罩</div> 
+    </div>
+    <div class="btn">
+        <div id="btn2" class="btn-border">垂直居中遮罩(带按钮)</div> 
+    </div>
+   <div class="btn">
+       <div id="btn3" class="btn-border">底部遮罩</div>
+   </div>
+    <div class="btn">
+       <div id="btn4" class="btn-border slideValue">右部遮罩</div>
+   </div>
+   
+     <!-- 垂直居中遮罩1 -->
+    <div class="ui-dialog" id="dialog1">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h3>保险投款</h3>
+            <div class="dialog-content">
+                <p class="font-gray">
+                1. 保费低至2.42元起；<br>
+                2. 保障高，最高达290万元；<br>
+                3. 保障期限选择多，7-365天可选；<br>
+                4. 承保年龄30天-60周岁。 
+                </p>
+           </div>
+        </div>
+    </div>
+
+    <!-- 垂直居中遮罩2 -->
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="center-text">确定查询违章吗？</p>
+                <p class="font-gray center-text">资费：查询一次0.1元</p>
+            </div>
+            
+            <div class="two-btn">
+                <a class="cancel btn-cancel">取消</a>
+                <a class="confirm btn-theme">确定</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部遮罩 -->
+    <div class="fixedBottom-dialog" id="dialog3">
+        <div class="ui-dialog"></div>
+        <div class="f-dialog-cnt">
+            <ul class="form-list">
+                <li class="border-bottom">解除绑定</li>
+                <li class="border-bottom">设为默认</li>
+            </ul>   
+        </div>
+    </div>
+
+     <!-- 选择车牌号遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择车牌号</h4>
+        </a>
+        <ul class="dialog-start-list">
+            <li class="active">苏</li>
+            <li>鲁</li>
+            <li>浙</li>
+            <li>川</li>
+            <li>皖</li>
+            <li>豫</li>
+            <li>粤</li>
+            <li>鄂</li>
+            <li>湘</li>
+            <li>吉</li>
+            <li>沪</li>
+            <li>渝</li>
+            <li>云</li>
+            <li>晋</li>
+            <li>蒙</li>
+            <li>贵</li>
+            <li>京</li>
+            <li>陕</li>
+            <li>冀</li>
+            <li>辽</li>
+            <li>津</li>
+            <li>桂</li>
+            <li>闽</li>
+            <li>黑</li>
+            <li>新</li>
+            <li>琼</li>
+            <li>甘</li>
+            <li>青</li>
+            <li>宁</li>
+            <li>藏</li>
+        </ul>
+        <ul class="dialog-end-list">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+            <li>F</li>
+            <li>G</li>
+            <li>H</li>
+            <li>I</li>
+            <li>J</li>
+            <li>K</li>
+            <li>L</li>
+            <li>M</li>
+            <li>N</li>
+            <li>O</li>
+            <li>P</li>
+            <li>Q</li>
+            <li>R</li>
+            <li>S</li>
+            <li>T</li>
+            <li>U</li>
+            <li>V</li>
+            <li>W</li>
+            <li>X</li>
+            <li>Y</li>
+            <li>Z</li>
+        </ul>
+    </div>
+
+    
+
+    <script type="text/javascript">
+    $(function(){
+        $('#btn1').click(function(){
+            $(this).showUiDialog('#dialog1');
+        });
+
+        $('#btn2').click(function(){
+            $(this).showUiDialog('#dialog2');
+        });
+
+        $('#btn3').click(function(){
+            $(this).showfixBtmDialog('#dialog3');
+        });
+        //选择车牌号
+        $('#btn4').click(function(){
+            var slide = new SlideDialog();
+        });
+
+        $('.fixedBottom-dialog li').click(function(){
+            $(this).hidefixBtmDialog('#dialog3');
+        });
+    });
+    </script>
+</body>
+</html>
