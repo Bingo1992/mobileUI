@@ -1,13 +1,15 @@
-±íµ¥£ºform.html
-ÁĞ±í£ºlist.html
-µ¼º½£ºnav.html
-ÕÚÕÖ£º dialog.html
-ÎŞÄÚÈİ×´Ì¬£º nothing.html
-½á¹ûÒ³£ºresult.html
-¼ÓÔØÖĞ£ºloading.html
+ç§»åŠ¨ç«¯ å‰ç«¯é¡µé¢é€šç”¨æ¨¡æ¿
 
-ÉÌÆ·ÏêÇé£ºproduct_detail.html
+è¡¨å•ï¼šform.html
+åˆ—è¡¨ï¼šlist.html
+å¯¼èˆªï¼šnav.html
+é®ç½©ï¼š dialog.html
+æ— å†…å®¹çŠ¶æ€ï¼š nothing.html
+ç»“æœé¡µï¼šresult.html
+åŠ è½½ä¸­ï¼šloading.html
 
-ĞÂÔöµØÖ·£º add_address.html
-µØÖ·ÁĞ±í£ºaddress_list.html
-µØÖ·¹ÜÀí£ºaddress_manage.html
+å•†å“è¯¦æƒ…ï¼šproduct_detail.html
+
+æ–°å¢åœ°å€ï¼š add_address.html
+åœ°å€åˆ—è¡¨ï¼šaddress_list.html
+åœ°å€ç®¡ç†ï¼šaddress_manage.html
