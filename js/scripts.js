@@ -110,7 +110,7 @@
                     event.stopPropagation();
                 } 
                 // 点击排序，筛选的内容
-                $(option2).find('li').click(function(){
+                $(option2).unbind('click').delegate('li','click',function(){
                     $(this).switchTabs(option1,option2);
                     var value = $(this).html();
                      $_this.find('span').html(value);
