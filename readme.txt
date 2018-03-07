@@ -1,4 +1,5 @@
-移动端 前端页面通用模板
+根据平时项目经验总结出一套适合移动端商城的前端页面通用模板
+
 访问地址： https://bingo1992.github.io/mobileUI/
 
 表单：form.html
